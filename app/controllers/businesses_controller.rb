@@ -2,22 +2,26 @@ class BusinessesController < ApplicationController
   require 'csv'
   require 'byebug'
 
-  before_action :parse_csv
+  before_action :parse_csv, only: :create
 
   def index
     @businesses = Business.all
+    render :json => @businesses
   end
 
   def create
     Business.create(business_params)
   end
 
-
+  def show
+    @business = Business.find(params[:id])
+    render :json => @business
+  end
 
 private
 
 def parse_csv
-  # byebug
+  Business.destroy_all
   csv_file = File.read('./businesses.csv')
   csv = CSV.parse(csv_file, :headers => true)
   csv.each do |row|
