@@ -5,7 +5,7 @@ class BusinessesController < ApplicationController
   before_action :parse_csv, only: :create
 
   def index
-    @businesses = Business.all
+    @businesses = Business.order('id ASC').paginate(:page => params[:page], per_page: 50)
     render :json => @businesses
   end
 

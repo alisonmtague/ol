@@ -12,6 +12,8 @@ gem 'sqlite3'
 
 gem 'byebug', :group => :development
 
+gem 'will_paginate', '~> 3.1.0'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
