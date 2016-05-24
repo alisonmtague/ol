@@ -3,13 +3,13 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+Technologies used:
 
 * ruby 2.3.1p112
 
 * Rails 4.2.6
 
-* Configuration
+* will_paginate ~> 3.1.0
 
 * Database creation
 
