@@ -1,7 +1,6 @@
 == OL
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This rails-api app parses the businesses.csv file and enters it into the Business model for use as an api.
 
 Technologies used:
 
@@ -11,18 +10,12 @@ Technologies used:
 
 * will_paginate ~> 3.1.0
 
-* Database creation
+* RSpec
 
-* Database initialization
+Instructions to run:
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+- pull repo
+- `rake db:create`
+- `rake db:migrate`
+- `rails s`
+- run app in browser on local port
