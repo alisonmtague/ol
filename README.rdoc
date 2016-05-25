@@ -14,8 +14,10 @@ Technologies used:
 
 Instructions to run:
 
-- pull repo
+- pull repo and bundle
 - `rake db:create`
 - `rake db:migrate`
 - `rails s`
-- run app in browser on local port
+- run app in browser on local port (first load will take time)
+
+* adding `?page=5`, for example, to root URL will take you to page 5 of the 50 items per page response
