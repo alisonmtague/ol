@@ -6,14 +6,21 @@ class BusinessesController < ApplicationController
 
   def index
     business_data = Business.order('id ASC').paginate(:page => params[:page], per_page: 50)
-    render json: { status: 200, business: business_data }
+    render json: {
+      status: 200,
+      current_page: business_data.current_page,
+      per_page: business_data.per_page,
+      total_entries: business_data.total_entries,
+      business: business_data
+    }
   end
 
   def create_database
     parse_csv
 
-    business_data = Business.new#(business_params)
-    if business_data.save
+    business_data = Business.new #(business_params)
+
+    if business_data.save #(business_params)
       redirect_to action: "index"
     else
       render json: {
@@ -47,7 +54,7 @@ def parse_csv
 end
 
 # def business_params
-#   params.require(:business)#.permit(:uuid, :name, :address, :address2, :city, :zip, :state, :country, :phone, :website, :created_at)
+#   params.require(:business).permit(:uuid, :name, :address, :address2, :city, :zip, :state, :country, :phone, :website, :created_at)
 # end
 
 end
